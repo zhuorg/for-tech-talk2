@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run clang-format
-      uses: HorstBaerbel/action-clang-format@master
+      uses: zhuorg/action-clang-format@master
       # These are optional
       with:
         sourcedir: '.'
