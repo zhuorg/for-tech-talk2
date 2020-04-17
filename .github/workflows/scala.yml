@@ -7,18 +7,9 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: df
+      - name: cgroup
         run: |
-          df -h
-          docker system df
-          docker run nvidia/cuda:10.2-cudnn7-devel-centos7
-          df -h
-          docker system df
-  check_cgroup:
-    runs-on: ubuntu-latest
-    container: ubuntu:latest
-    steps:
-      - name: Install environment
-        run: |
-          df -h
+          cd /sys/fs/cgroup/systemd
+          ls
+
           
