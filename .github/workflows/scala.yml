@@ -10,7 +10,7 @@ jobs:
       - name: cgroup
         run: |
           docker run ubuntu:latest
-          cd /sys/fs/cgroup/systemd
+          cd /sys/fs/cgroup/systemd/actions_job
           ls
 
           
