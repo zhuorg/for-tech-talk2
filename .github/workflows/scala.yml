@@ -4,6 +4,12 @@ on:
   push:
 
 jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: df
+        run: |
+          df -h
   check_cgroup:
     runs-on: ubuntu-latest
     container: nvidia/cuda:10.1-cudnn7-devel-centos7
