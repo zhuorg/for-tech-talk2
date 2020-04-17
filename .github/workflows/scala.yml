@@ -12,4 +12,6 @@ jobs:
 
     steps:
     - name: check cgroup
-      run: cd /sys/fs/cgroup & ls
+      run: |
+        cd /sys/fs/cgroup 
+        ls
