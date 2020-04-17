@@ -9,6 +9,7 @@ jobs:
     steps:
       - name: cgroup
         run: |
+          docker run ubuntu:latest
           cd /sys/fs/cgroup/systemd
           ls
 
