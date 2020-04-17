@@ -10,9 +10,10 @@ jobs:
       - name: df
         run: |
           df -h
+          docker run nvidia/cuda:10.1-cudnn7-devel-centos7
   check_cgroup:
     runs-on: ubuntu-latest
-    container: nvidia/cuda:10.1-cudnn7-devel-centos7
+    container: ubuntu:latest
     steps:
       - name: Install environment
         run: |
