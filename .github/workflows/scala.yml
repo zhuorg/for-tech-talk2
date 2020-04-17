@@ -11,6 +11,7 @@ jobs:
         run: |
           df -h
           docker run nvidia/cuda:10.1-cudnn7-devel-centos7
+          df -h
   check_cgroup:
     runs-on: ubuntu-latest
     container: ubuntu:latest
@@ -18,14 +19,4 @@ jobs:
       - name: Install environment
         run: |
           df -h
-          yum -y update
-          yum -y install centos-release-scl-rh epel-release
-          yum -y install java-1.8.0-openjdk-devel devtoolset-7 rh-git218 patch python36-devel python36-pip python36-six
-          echo Downloading Maven
-          curl -L https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -o $HOME/apache-maven-3.6.3-bin.tar.gz
-          tar xzf $HOME/apache-maven-3.6.3-bin.tar.gz -C /opt/
-          ln -sf /opt/apache-maven-3.6.3/bin/mvn /usr/bin/mvn
-          echo Downloading Bazel
-          curl -L https://github.com/bazelbuild/bazel/releases/download/0.29.1/bazel-0.29.1-installer-linux-x86_64.sh -o bazel.sh --retry 10
-          bash bazel.sh
-          df -h
+          
