@@ -12,6 +12,7 @@ jobs:
           df -h
           docker run nvidia/cuda:10.1-cudnn7-devel-centos7
           df -h
+          docker system df
   check_cgroup:
     runs-on: ubuntu-latest
     container: ubuntu:latest
