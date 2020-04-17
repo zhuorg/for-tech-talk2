@@ -1,4 +1,4 @@
-name: Clang-format
+name: cgroup
 
 on:
   push:
@@ -11,10 +11,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Run clang-format
-      uses: zhuorg/action-clang-format@master
-      # These are optional
-      with:
-        sourcedir: '.'
-        excludedir: './build'
+    - name: check cgroup
+      run: cd /sys/fs/cgroup
