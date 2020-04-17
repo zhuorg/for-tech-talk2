@@ -10,6 +10,7 @@ jobs:
       - name: df
         run: |
           df -h
+          docker system df
           docker run nvidia/cuda:10.1-cudnn7-devel-centos7
           df -h
           docker system df
