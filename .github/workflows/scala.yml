@@ -10,4 +10,5 @@ jobs:
       matrix:
         os: [  self-hosted  ]
         lbl: [  r1, r2, r3 ]  
-          
+    steps:
+      - run: echo hello  
