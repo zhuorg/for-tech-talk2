@@ -4,13 +4,10 @@ on:
   push:
 
 jobs:
-  job1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: cgroup
-        run: |
-          docker run ubuntu:latest
-          cd /sys/fs/cgroup/systemd/actions_job
-          ls
-
+  win-run:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [  self-hosted  ]
+        lbl: [  r1, r2, r3 ]  
           
