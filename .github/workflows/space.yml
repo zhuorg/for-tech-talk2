@@ -1,0 +1,16 @@
+name: ssd disk
+
+on:
+  push:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: df
+        run: |
+          df -h
+          docker system df
+          docker run nvidia/cuda:10.1-cudnn7-devel-centos7
+          df -h
+          docker system df
