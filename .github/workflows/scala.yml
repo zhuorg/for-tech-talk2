@@ -5,10 +5,10 @@ on:
 
 jobs:
   win-run:
-    runs-on: ${{ matrix.os }}
+    runs-on: [ ${{ matrix.os }} , ${{ matrix.lbl }} ]
     strategy:
       matrix:
         os: [  self-hosted  ]
-        se: [  r1, r2, r3 ]  
+        lbl: [  r1, r2, r3 ]  
     steps:
       - run: echo hello  
