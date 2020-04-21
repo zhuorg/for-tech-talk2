@@ -5,10 +5,19 @@ on:
 
 jobs:
   win-run:
-    runs-on: [ "${{ matrix.os }}" , "${{ matrix.lbl }}" ]
-    strategy:
-      matrix:
-        os: [  self-hosted  ]
-        lbl: [  r1, r2, r3 ]  
+    runs-on: ubuntu-latest
+     
     steps:
       - run: echo hello  
+      - name: "[SERVICE] Start cassandra"
+        run: |
+          docker run -d -p 39042:9042 -p 30080:80  --name cassandra ubuntu:latest &
+
+      - name: "[SERVICE] Start kafka & zookeeper"
+        run: |
+          docker run -d -h=localhost -p 32181:2181 -p 39092:39092 --name kafka-zk postgres:latest &
+
+      - name: "[SERVICE] Start xxxx"
+        run: |
+          docker run -d -p 38080:8080 --name hahaha redis:latest &  
+      - run: docker ps 
