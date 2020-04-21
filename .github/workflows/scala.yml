@@ -5,7 +5,7 @@ on:
 
 jobs:
   win-run:
-    runs-on: [ ${{ matrix.os }} , ${{ matrix.lbl }} ]
+    runs-on: ${{ matrix.os }}  ${{ matrix.lbl }} 
     strategy:
       matrix:
         os: [  self-hosted  ]
