@@ -20,4 +20,6 @@ jobs:
       - name: "[SERVICE] Start xxxx"
         run: |
           docker run -d -p 38080:8080 --name hahaha redis:latest &  
-      - run: docker ps -a
+      - run: |
+         sleep 10
+         docker ps -a
